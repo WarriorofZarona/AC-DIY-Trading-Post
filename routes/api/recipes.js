@@ -3,14 +3,14 @@ const recipeController = require("../../controller/recipeController");
 
 // Matches with "/api/books"
 router.route("/")
-    .get(booksController.findAll)
-    .post(booksController.create);
+    .get(recipeController.findAll)
+    .post(recipeController.create);
 
 // Matches with "/api/books/:id"
 router
     .route("/:id")
-    .get(booksController.findById)
-    .put(booksController.update)
-    .delete(booksController.remove);
+    .get(recipeController.findById)
+    .put(recipeController.update)
+    .delete(recipeController.remove);
 
 module.exports = router;
