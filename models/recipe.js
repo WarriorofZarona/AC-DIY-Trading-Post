@@ -1,27 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const recipeSchema = new mongoose.Schema({
+const recipeSchema = new Schema({
     //Recipe name
-    name: {
-        type: String,
-        required: true
-    },
+    name: String,
     //Item image
-    image: {
-        type: String,
-        required: true
-    },
+    image: String,
     //Category it belongs to
-    category: {
-        type: String,
-        required: true
-    },
+    category: String,
     //Materials needed to craft
-    materials: Schema.Types.Mixed,
+    materials: { type: String },
     //How to get it in-game
-    source: Schema.Types.Mixed,
-
+    source: [String],
     // Any miscellaneous note
     notes: String
 });
