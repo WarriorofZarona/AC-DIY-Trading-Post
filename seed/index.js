@@ -1,5 +1,5 @@
 const seeder = require('mongoose-seed');
-const recipes = require('./recipes.json')
+const recipes = require('./recipes.json');
 const db = "mongodb://localhost/acdiydb";
 
 const data = [{
@@ -12,9 +12,9 @@ const data = [{
             "materials": recipe.materials,
             "source": recipe.source,
             "notes": recipe.sourceNotes
-        }
-    })
-}]
+        };
+    });
+}];
 
 seeder.connect(db, () => {
     seeder.loadModels(["./models/Recipe.js"]);
