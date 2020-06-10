@@ -49,7 +49,7 @@ passport.use(new GoogleStrategy({
 },
 
     function (token, tokenSecret, profile, done) {
-        db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        db.User.findOrCreate({ googleId: profile.id, email: profile.emails[0].value }, function (err, user) {
             return done(err, user);
         });
     }
