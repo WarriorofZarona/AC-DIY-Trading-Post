@@ -9,4 +9,4 @@ export default {
     getRecipe(id) {
         return axios.get('/api/recipes/' + id);
     }
-}
+};
